@@ -1,5 +1,3 @@
-//+build !go1.12
-
 package luar
 
 import "github.com/yuin/gopher-lua"

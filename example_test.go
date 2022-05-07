@@ -23,6 +23,7 @@ func (u *User) Token() string {
 const script = `
     print("Hello from Lua, " .. u.Name .. "!")
     u:SetToken("12345")
+	u.Name = 'bingoo'
     `
 
 func Example_basic() {
@@ -37,8 +38,8 @@ func Example_basic() {
 		panic(err)
 	}
 
-	fmt.Println("Lua set your token to:", u.Token())
+	fmt.Println("Lua set your token to:", u.Token(), "name:", u.Name)
 	// Output:
 	// Hello from Lua, Tim!
-	// Lua set your token to: 12345
+	// Lua set your token to: 12345 name: bingoo
 }
